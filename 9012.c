@@ -16,18 +16,15 @@ int main ()
 {
 	int T,i,j;
 	char string[100] = "";
-	char *nullString = "";
 	struct Stack st = {0, };
 	struct Stack *stptr = &st;
-	char ps = '(';
-	char *ptr = &ps;
 	scanf("%d",&T);
 	for (i=0; i<T; i++)
 	{
 		scanf("%s",string);
 		for (j=0; j<strlen(string); j++)
 		{
-			if (string[j] == '(') push(stptr, ptr);
+			if (string[j] == '(') push(stptr, (char*)'(');
 			else if (string[j] == ')')
 			{
 				if (pop(stptr) == NULL)
